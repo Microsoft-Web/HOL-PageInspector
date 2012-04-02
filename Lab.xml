@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Lab xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.datacontract.org/2004/07/ContentFramework.Core.Models">
+  <Id>PageInspector</Id>
+  <Author>
+    <Blog>
+    </Blog>
+    <Email>
+    </Email>
+    <Name>Robert Green</Name>
+  </Author>
+  <Description>Page Inspector is a new tool that brings browser diagnostics tools into Visual Studio and provides an integrated experience 
+  between the browser, ASP.NET, and source code. It renders a web page (HTML, Web Forms, ASP.NET MVC, or Web Pages) directly within  
+  Visual Studio 11 and lets you examine both the source code and the resulting output. Page Inspector enables you to easily decompose a website, 
+  rapidly build pages from the ground up, and quickly diagnose issues. In this lab, you will explore how to use Page Inspector.</Description>
+  <Document ConversionType="Html">.\Lab.docx</Document>
+  <Title>Using Page Inspector in Visual Studio 11</Title>
+  <Version>1.2.0</Version>
+  <Source>.\Source</Source>
+  <DependencyChecker ScriptsFolder="env:PackagePath\Assets\DependencyChecker\scripts">.\Source\Setup\Dependencies.dep</DependencyChecker>
+  <Technologies>
+    <Technology>Visual Studio</Technology>	
+  </Technologies>
+</Lab>

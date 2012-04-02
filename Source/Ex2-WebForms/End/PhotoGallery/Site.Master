@@ -1,0 +1,60 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="PhotoGallery.SiteMaster" %>
+<!DOCTYPE html>
+<html lang="en">
+<head runat="server">
+    <title></title>
+    <link href="~/Styles/Site.css" rel="stylesheet" type="text/css" />
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server">
+    </asp:ContentPlaceHolder>
+    <meta name="viewport" content="width=device-width">
+</head>
+<body>
+    <form runat="server">
+        <header>
+            <div class="content-wrapper">
+                <div class="float-left">
+                    <p class="site-title">Photo Gallery</p>
+                </div>
+                <section id="login">
+                    <asp:LoginView ID="LoginView1" runat="server" EnableViewState="false">
+                        <AnonymousTemplate>
+                            <a href="~/Account/Login.aspx" id="HeadLoginStatus" runat="server">Log In</a>
+                        </AnonymousTemplate>
+                        <LoggedInTemplate>
+                            Welcome <span class="bold"><asp:LoginName ID="HeadLoginName" runat="server" /></span>!
+                            <asp:LoginStatus ID="HeadLoginStatus" runat="server" LogoutAction="Redirect" LogoutText="Log Out" LogoutPageUrl="~/"/>
+                        </LoggedInTemplate>
+                    </asp:LoginView>
+                </section>
+                <nav>
+                        
+                    <asp:Menu ID="Menu1" runat="server" CssClass="menu" EnableViewState="false" IncludeStyleBlock="false" Orientation="Horizontal">
+                        <Items>
+                            <asp:MenuItem NavigateUrl="~/Default.aspx" Text="Home"/>
+                            <asp:MenuItem NavigateUrl="~/About.aspx" Text="About"/>
+                        </Items>
+                    </asp:Menu>
+                </nav>
+            </div>
+        </header>
+        <div id="body">
+            <section class="content-wrapper main-content clear-fix">
+                <asp:ContentPlaceHolder ID="MainContent" runat="server"/>
+            </section>
+        </div>
+        <footer>
+            <div class="content-wrapper">
+                <div class="float-left">
+                    <p>&copy; <%= DateTime.Now.Year %> - My ASP.NET Web Application</p>
+                </div>
+                <div class="float-right">
+                    <ul id="social">
+                        <li><a href="http://facebook.com" class="facebook">Facebook</a></li>
+                        <li><a href="http://twitter.com" class="twitter">Twitter</a></li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
+    </form>
+</body>
+</html>
