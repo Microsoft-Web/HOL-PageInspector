@@ -93,7 +93,7 @@ Web.config
 
 	You will see all the source files that are composing the Index page. This feature helps to identify all the elements at a glance, especially when you are working with partial views and templates. Notice that you can also open each of the files if you click the links.
 
-	![The-Files-tab](images/the-files-tab1.png?raw=true)
+	![The-Files-tab](images/The-Files-tab1.png?raw=true)
  
 	_The Files tab_
 
@@ -101,7 +101,7 @@ Web.config
 
 	This tool will let you select any element of the page and see its HTML and Razor code.
 
-	![Toggle-Inspection-Mode-button](images/toggle-inspection-mode-button1.png?raw=true)
+	![Toggle-Inspection-Mode-button](images/Toggle-Inspection-Mode-button1.png?raw=true)
  
 	_Toggle Inspection Mode button_
 
