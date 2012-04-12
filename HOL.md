@@ -75,7 +75,6 @@ In this task, you will learn how to use the Page Inspector in the context of an 
 	To generate the metadata that is required for some of its features, Page Inspector must instrument the project by adding the following setting to the <appSetting> element in the **Web.config** file. You can use Page Inspector even if this setting is disabled or it is missing. However, some features like the source selection mapping will not work under these conditions.
 
 	````HTML
-Web.config
 	<add key="VisualStudioDesignTime:Enabled" value="true" />
 ````
   1. The Page Inspector window will show the /Home/Index URL mapped to the source View you selected. 
@@ -183,7 +182,7 @@ You had probably followed these steps when you wanted to detect and fix an issue
 1. Run the Solution from Visual Studio, or deploy the page on the web server.
 
 1. In the browser, open the developer tools you use, or simply open the source code and the styles and try to match the issue.
-  - To find the files involved, you would have used the "Search" or "Search in files" features with the name of the style classes.
+To find the files involved, you would have used the "Search" or "Search in files" features with the name of the style classes.
 
 1. Once the error is detected, stop the Web browser and the server.
 
@@ -291,7 +290,6 @@ In this task, you will learn how to use the Page Inspector features in the conte
 	To generate the metadata that is required for some of its features, Page Inspector must instrument the project by adding the following setting to the <appSetting> element in Web.config file. You can use Page Inspector even with this setting disabled or missing. However, some features will not work, such as source selection mapping.
 
 	````HTML
-Web.config
 	<add key="VisualStudioDesignTime:Enabled" value="true" />
 ````
 
