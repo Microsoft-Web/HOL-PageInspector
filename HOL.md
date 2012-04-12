@@ -215,7 +215,7 @@ In this task, you will use the Page inspector and fix some issues the Photo Gall
  
 	_Selecting the CSS styles_
 
-1. Uncomment the **text-align** attribute in the highlighted code by removing the opening and closing characters (/* */) and save the**Site.css** file.
+1. Uncomment the **text-align** attribute in the highlighted code by removing the opening and closing characters and save the **Site.css** file.
 
 	Page Inspector is aware of all the different files that compose the current page, and it can detect when any of these files change. It alerts you whenever the current page in browser is not in sync with the source files.
 
