@@ -154,9 +154,9 @@ Web.config
  
 	_Enabling and disabling CSS styles_
 
-  1. Now, click the' **your logo here'** text on the header using the inspection mode.
+  1. Now, click the '**your logo here**' text on the header using the inspection mode.
 
-  1. In the **Styles** tab, locate the **font-size** CSS attribute under the **.site-title** group. Double-click the attribute value and replace the 2.3em value with **3em**, and then press **ENTER**. Notice that the title looks bigger.
+  1. In the **Styles** tab, locate the **font-size** CSS attribute under the **.site-title** group. Double-click the attribute value and replace the 2.3 em value with **3 em**, and then press **ENTER**. Notice that the title looks bigger.
 
  	![Changing CSS values in the Page Inspector](./images/Changing-CSS-values-in-the-Page-Inspector.png?raw=true "Changing CSS values in the Page Inspector")
  
@@ -183,8 +183,7 @@ You had probably followed these steps when you wanted to detect and fix an issue
 1. Run the Solution from Visual Studio, or deploy the page on the web server.
 
 1. In the browser, open the developer tools you use, or simply open the source code and the styles and try to match the issue.
-
-	- To find the files involved, you would have used the "Search" or "Search in files" features with the name of the style classes.
+  - To find the files involved, you would have used the "Search" or "Search in files" features with the name of the style classes.
 
 1. Once the error is detected, stop the Web browser and the server.
 
