@@ -453,7 +453,7 @@ In this task, you will use the Page inspector for fixing some issues the Photo G
  
 	_Selecting the CSS styles_
 
-1. Uncomment the **text-align** attribute in the highlighted code by removing the opening and closing characters (/* ... */) and save the **Site.css** file.
+1. Uncomment the **text-align** attribute in the highlighted code by removing the opening and closing characters (/** **/) and save the **Site.css** file.
 
 	Notice that the page inspector will prompt again for showing and refreshing.
 
