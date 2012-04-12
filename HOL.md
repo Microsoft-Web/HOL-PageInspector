@@ -400,7 +400,7 @@ You had probably followed these steps when you wanted to detect and fix an issue
 1. Run the Solution from Visual Studio, or deploy the page on the web server.
 
 1. In the browser, open the developer tools you use, or simply open the source code and the styles and try to match the issue.
-  - To find the files involved, you'd have used the "Search" or "Search in files" features with the name of the style classes.
+To find the files involved, you'd have used the "Search" or "Search in files" features with the name of the style classes.
 
 1. Once the error is detected, stop the Web browser and the server.
 
@@ -453,7 +453,7 @@ In this task, you will use the Page inspector for fixing some issues the Photo G
  
 	_Selecting the CSS styles_
 
-1. Uncomment the **text-align** attribute in the highlighted code by removing the opening and closing characters (/* */) and save the**Site.css** file.
+1. Uncomment the **text-align** attribute in the highlighted code by removing the opening and closing characters (/*  */) and save the **Site.css** file.
 
 	Notice that the page inspector will prompt again for showing and refreshing.
 
