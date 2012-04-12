@@ -232,7 +232,7 @@ In this task, you will use the Page inspector and fix some issues the Photo Gall
  
 	_Reloading the page_
 
-1. Using the inspection mode, select any of the **\<li>** items that contain the “Register” and “Log On” links. Then, click the **\<section> #login** item to access Styles.css code.
+1. Using the inspection mode, select any of the **\<li>** items that contain the “Register” and “Log On” links. Then, click the **\<section> #login** item to access **Styles.css** code.
 
  	![Finding the style](./images/Finding-the-style.png?raw=true "Finding the style")
  
