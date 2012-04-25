@@ -8,10 +8,7 @@
     </Email>
     <Name></Name>
   </Author>
-  <Description>Page Inspector is a new tool that brings browser diagnostics tools into Visual Studio and provides an integrated experience 
-  between the browser, ASP.NET, and source code. It renders a web page (HTML, Web Forms, ASP.NET MVC, or Web Pages) directly within  
-  Visual Studio 11 and lets you examine both the source code and the resulting output. Page Inspector enables you to easily decompose a website, 
-  rapidly build pages from the ground up, and quickly diagnose issues. In this lab, you will explore how to use Page Inspector.</Description>
+  <Description>Page Inspector is a new tool that brings browser diagnostics tools into Visual Studio and provides an integrated experience between the browser, ASP.NET, and source code. It renders a web page (HTML, Web Forms, ASP.NET MVC, or Web Pages) directly within Visual Studio 11 and lets you examine both the source code and the resulting output. Page Inspector enables you to easily decompose a website, rapidly build pages from the ground up, and quickly diagnose issues. In this lab, you will explore how to use Page Inspector.</Description>
   <Document ConversionType="Html">.\HOL.md</Document>
   <Title>Using Page Inspector in Visual Studio 11</Title>
   <Version>1.2.0</Version>
