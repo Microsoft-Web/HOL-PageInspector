@@ -1,5 +1,9 @@
-﻿#Using Page Inspector in Visual Studio 11#
+﻿<a name="HOLTitle" />
+#Using Page Inspector in Visual Studio 2012#
 
+---
+
+<a name="Overview" />
 ## Overview ##
 
 In this Hands-on Lab, you will discover a new tool to find and fix web page issues in Visual Studio - the Page Inspector.
@@ -16,6 +20,7 @@ Using Page Inspector, you can see which elements in the source files (including 
 
 This hands-on lab will walk you through the Page Inspector features and show you how you can use them to fix issues in Web applications. **This lab contains two exercises using similar flows but targeting different technologies. If you are an ASP.NET MVC Developer, follow exercise one; if you are a WebForms developer follow exercise two**.
 
+<a name="Objectives" />
 ### Objectives ###
 
 In this hands-on lab, you will learn how to:
@@ -26,39 +31,44 @@ In this hands-on lab, you will learn how to:
 
 - Detect and fix issues in your web pages using Page Inspector
 
- 
+
+<a name="SystemRequirements" /> 
 ### Prerequisites ###
 
-- [Microsoft Visual Studio 11  Beta](http://go.microsoft.com/fwlink/?LinkId=240160)
+- [Microsoft Visual Studio 2012](http://go.microsoft.com/fwlink/?LinkId=240160)
 
-- Page Inspector (included in the Microsoft Visual Studio 11 Beta installation)
+- Page Inspector (included in the Microsoft Visual Studio 2012 installation)
 
 - Internet Explorer 9
 
-- ASP.NET MVC 4 (only if you are performing exercise 1; included in the Microsoft Visual Studio 11 Beta installation)
+- ASP.NET MVC 4 (only if you are performing exercise 1; included in the Microsoft Visual Studio 2012 installation)
 
 > **Note:** Page Inspector hosts the current version of Internet Explorer in Visual Studio. For full functionality, you must have Internet Explorer 9 installed on your computer. You do not need to have Internet Explorer Platform Preview (also called Internet Explorer 10 Test Drive) installed. 
  
+---
+<a name="Exercises" />
 ## Exercises ##
 
 This hands-on lab includes the following exercises:
 
-1. Using Page Inspector in ASP.NET MVC Projects
+1. [Exercise 1: Using Page Inspector in ASP.NET MVC Projects](#Exercise1)
 
-1. Using Page Inspector in WebForms Projects
+1. [Exercise 2: Using Page Inspector in WebForms Projects](#Exercise1)
 
-> **Note:** Each exercise is accompanied by a starting solution-located in the Begin folder of the exercise-that allows you to follow each exercise independently of the others. Inside the source code for an exercise, you will also find an End folder containing a Visual Studio solution with the code that results from completing the steps in the corresponding exercise. You can use these solutions as guidance if you need additional help as you work through this hands-on lab.
+> **Note:** Each exercise is accompanied by a starting solution, located in the Begin folder of the exercise, that allows you to follow each exercise independently of the others. Inside the source code for an exercise, you will also find an End folder containing a Visual Studio solution with the code that results from completing the steps in the corresponding exercise. You can use these solutions as guidance if you need additional help as you work through this hands-on lab.
 
  
+<a name="Exercise1" />
 ### Exercise 1: Using Page Inspector in ASP.NET MVC Projects ###
 
 In this exercise, you will learn how to preview and debug an **ASP.NET MVC 4** solution using **Page Inspector**. First, you will perform a brief lap around the tool to learn the features that facilitate the Web debugging process. Then, you will work in a web page that contains styling issues. You will learn how to use Page Inspector to find the source code that generates the issue and fix it.
 
+<a name="Ex1Task1" />
 #### Task 1 - Exploring Page Inspector ####
 
 In this task, you will learn how to use the Page Inspector in the context of an ASP.NET MVC 4 project that shows a photo gallery.
 
-  1. Open **Visual Studio 11** and open the **PageInspector-MVC-Begin.sln** solution located in **Source\Ex1-MVC4\Begin** from this lab's folder. You will use this solution for exploring Page Inspector. 
+  1. Open **Visual Studio 2012** and open the **PageInspector-MVC-Begin.sln** solution located in **Source\Ex1-MVC4\Begin** from this lab's folder. You will use this solution for exploring Page Inspector. 
 
   1. In the Solution Explorer, locate **Index.cshtml** view under the **/Views/Home** project folder, right-click it and select **View in Page Inspector**.
 
@@ -66,13 +76,7 @@ In this task, you will learn how to use the Page Inspector in the context of an 
  
 	_Selecting a file to preview in Page Inspector_
 
-  1. You will notice that Visual Studio will prompt for permission before enabling the tool in your project. Click **YES.**
-
- 	![Enabling Page Inspector in a Visual Studio project](./images/Enabling-Page-Inspector-in-a-Visual-Studio-project.png?raw=true "Enabling Page Inspector in a Visual Studio project")
- 
-	_Enabling Page Inspector in a Visual Studio project_
-
-	To generate the metadata that is required for some of its features, Page Inspector must instrument the project by adding the following setting to the <appSetting> element in the **Web.config** file. You can use Page Inspector even if this setting is disabled or it is missing. However, some features like the source selection mapping will not work under these conditions.
+  1. To generate the metadata that is required for some of its features, Page Inspector must instrument the project by adding the following setting to the <appSetting> element in the **Web.config** file. You can use Page Inspector even if this setting is disabled or it is missing. However, some features like the source selection mapping will not work under these conditions.
 
 	````HTML
 	<add key="VisualStudioDesignTime:Enabled" value="true" />
@@ -173,6 +177,7 @@ In this task, you will learn how to use the Page Inspector in the context of an 
  
  	_Element layout in Page Inspector_
  
+<a name="Ex1Task2" />
 #### Task 2 - Finding and Fixing Style Issues in the Photo Gallery ####
 
 How would you diagnose Web pages issues with previous versions of Visual Studio? You are likely familiar with web debugging tools that run outside the Visual Studio IDE, like Internet Explorer Developer Tools or Firebug. Browsers only understand HTML, scripting and styles, while an underlying framework generates the HTML that will be rendered. For that reason, you often need to deploy the whole site to see how web pages look like.
@@ -265,29 +270,27 @@ In this task, you will use the Page inspector and fix some issues the Photo Gall
 1. Finally press **F5** to run the app. Check out all the changes work as expected.
 
  
+---
+
+<a name="Exercise2" />
 ### Exercise 2: Using Page Inspector in WebForms Projects ###
 
 In this exercise, you will learn how to preview and debug a WebForms solution using Page Inspector. You will first perform a brief lap around the tool to learn the Page Inspector features that facilitate the Web debugging process. Then, you will work in a web page that contains styling issues. You will learn how to use Page Inspector to find the source code that generates the issue and fix it.
 
+<a name="Ex2Task1" />
 #### Task 1 - Exploring Page Inspector ####
 
 In this task, you will learn how to use the Page Inspector features in the context of a WebForms project that shows a photo gallery.
 
-1. Open **Visual Studio 11** and open the **PageInspector-WebForms-Begin.sln** solution located in **Source\Ex2-WebForms\Begin** from this lab's folder.
+1. Open **Visual Studio 2012** and open the **PageInspector-WebForms-Begin.sln** solution located in **Source\Ex2-WebForms\Begin** from this lab's folder.
 
 1. In the Solution Explorer, locate **Default.aspx** page, right-click it and select **View in Page Inspector**.
 
- 	![Selecting a file to preview in Page Inspector](./images/Selecting-a-file-to-preview-in-Page-Inspector.png?raw=true "Selecting a file to preview in Page Inspector")
+ 	![Opening Default.aspx with Page Inspector](./images/Opening-Default.aspx-with-Page-Inspector.png?raw=true "Opening Default.aspx with Page Inspector")
  
-	_Selecting a file to preview in Page Inspector_
+	_Opening Default.aspx with Page Inspector_
 
-1. You will notice that Visual Studio will prompt for permission before enabling the tool in your project. Click **YES.**
-
- 	![Enabling Page Inspector in a Visual Studio project](./images/Enabling-Page-Inspector-in-a-Visual-Studio-project.png?raw=true "Enabling Page Inspector in a Visual Studio project")
- 
-	_Enabling Page Inspector in a Visual Studio project_
-
-	To generate the metadata that is required for some of its features, Page Inspector must instrument the project by adding the following setting to the <appSetting> element in Web.config file. You can use Page Inspector even with this setting disabled or missing. However, some features will not work, such as source selection mapping.
+1. To generate the metadata that is required for some of its features, Page Inspector must instrument the project by adding the following setting to the <appSetting> element in Web.config file. You can use Page Inspector even with this setting disabled or missing. However, some features will not work, such as source selection mapping.
 
 	````HTML
 	<add key="VisualStudioDesignTime:Enabled" value="true" />
@@ -297,9 +300,9 @@ In this task, you will learn how to use the Page Inspector features in the conte
 
 1. The Page Inspector window will show Default.aspx. 
 
- 	![The first contact with Page Inspector](./images/The-first-contact-with-Page-Inspector.png?raw=true "The first contact with Page Inspector")
+ 	![Viewing Default.aspx in Page Inspector](./images/Viewing-Default.aspx-in-Page-Inspector.png?raw=true "Viewing Default.aspx in Page Inspector")
  
-	_The first contact with Page Inspector_
+	_Viewing Default.aspx in Page Inspector_
 
 	The Page Inspector tool is integrated in your Visual Studio environment. The inspector contains an embedded browser, together with a powerful HTML profiler that will show the selected code. Notice that you do not have to run the solution to see how your pages look.
 
@@ -309,7 +312,7 @@ In this task, you will learn how to use the Page Inspector features in the conte
 
 	You will see all the source files that are composing the rendered Default page. This is a useful feature to identify all the elements at a glance, especially when you are working with User Controls and Master Pages. Notice that you can also navigate to each of the files.
 
- 	![The Files tab](./images/The-Files-tab.png?raw=true "The Files tab")
+ 	![The Files tab](./images/The-Files-tab2.png?raw=true "The Files tab")
  
 	_The Files tab_
 
@@ -335,7 +338,7 @@ In this task, you will learn how to use the Page Inspector features in the conte
  
 	_Inspecting elements_
 
-1. Click the **Toggle Inspection Mode** button (![the cursor.](./images/the-cursor..png?raw=true "the cursor.")
+1. Click the **Toggle Inspection Mode** button (![Select-the-HTML-tab-to-display-the-HTML-code-rendered-in-the-Page-Inspector-browser.](./images/Select-the-HTML-tab-to-display-the-HTML-code-rendered-in-the-Page-Inspector-browser..png?raw=true "Select-the-HTML-tab-to-display-the-HTML-code-rendered-in-the-Page-Inspector-browser.")
  ), located in Page Inspector tabs, to disable the cursor.
 
 1.  Select the **HTML** tab to display the HTML code rendered in the Page Inspector browser.
@@ -352,13 +355,13 @@ In this task, you will learn how to use the Page Inspector features in the conte
 
 	> **Note:** since the header is a part of the site layout, Page Inspector will also open Site.Master file and highlight the segment of code affected.
 
- 	![Discovering styles and source files of a selected element](./images/Discovering-styles-and-source-files-of-a-selected-element.png?raw=true "Discovering styles and source files of a selected element")
+ 	![DiscoveringstylesWebForms](./images/DiscoveringstylesWebForms.png?raw=true "Discovering styles and source files of a selected element")
  
 	_Discovering styles and source files of a selected element_
 
 1. With the toggle inspection pointer enabled, move the mouse pointer below the menu bar and click the blank half circle.
 
- 	![Selecting an element](./images/Selecting-an-element.png?raw=true "Selecting an element")
+ 	![Selecting an element](./images/Selecting-an-element-WebForms.png?raw=true "Selecting an element")
  
 	_Selecting an element_
 
@@ -366,7 +369,7 @@ In this task, you will learn how to use the Page Inspector features in the conte
 
 	>**Note:** The changes you apply on the Page Inspector Styles tab do not affect the original stylesheet. You can uncheck styles or change their values as many times as you want, but they will be restored after refreshing the page.
 
-	![Enabling and disabling CSS styles](./images/Enabling-and-disabling-CSS-styles.png?raw=true "Enabling and disabling CSS styles")
+	![Enabling and disabling CSS styles2](./images/Enabling-and-disabling-CSS-styles2.png?raw=true "Enabling and disabling CSS styles")
  
 	_Enabling and disabling CSS styles_
 
@@ -374,7 +377,7 @@ In this task, you will learn how to use the Page Inspector features in the conte
 
 1. In the **Styles** tab, locate the **font-size** CSS attribute under the **.site-title** group. Click the attribute once to edit its value. Replace the 2.3em value with **5em**, and then press ENTER. Notice that the title looks bigger.
 
- 	![Changing CSS values in the Page Inspector](./images/Changing-CSS-values-in-the-Page-Inspector.png?raw=true "Changing CSS values in the Page Inspector")
+ 	![Changing CSS values in the Page Inspector2](./images/Changing-CSS-values-in-the-Page-Inspector2.png?raw=true "Changing CSS values in the Page Inspector")
  
 	_Changing CSS values in the Page Inspector_
 
@@ -386,11 +389,12 @@ In this task, you will learn how to use the Page Inspector features in the conte
 
 1. Another feature of Page Inspector is the Layout pane. Using the inspection mode, select the navigation bar and then click the **Layout** tab on the right pane. You will see the exact size of the selected element, as well as its offset, margin, padding and border size. Notice that you can also modify the values from this view.
 
- 	![Element layout in Page Inspector](./images/Element-layout-in-Page-Inspector.png?raw=true "Element layout in Page Inspector")
+ 	![Element layout in Page Inspector](./images/Element-layout-in-Page-Inspector2.png?raw=true "Element layout in Page Inspector")
  
  	_Element layout in Page Inspector_
  
 
+<a name="Ex2Task2" />
 #### Task 2 - Finding and Fixing Style Issues in the Photo Gallery ####
 
 How would you diagnose Web pages issues with previous versions of Visual Studio? You are likely familiar with web debugging tools that run outside the Visual Studio IDE, like Internet Explorer Developer Tools or Firebug. Browsers only understand HTML, scripting and styles, while an underlying framework generates the HTML that will be rendered. For that reason, you often need to deploy the whole site to see how web pages look like.
@@ -419,7 +423,7 @@ In this task, you will use the Page inspector for fixing some issues the Photo G
 
  	![Log on link positioned on the left](./images/Log-on-link-positioned-on-the-left.png?raw=true "Log on link positioned on the left")
  
-	_Log on link positioned on the left_
+	_Log In link positioned on the left_
 
 1. With Toggle Inspection Mode selected, select the Log In link to open its code.
 
@@ -477,22 +481,9 @@ In this task, you will use the Page inspector for fixing some issues the Photo G
 
 1. Finally press **F5** to run the app the check out all the changes work as expected.
 
- 
+---
 
-
+<a name="Summary" />
 ## Summary ##
 
 By completing this Hands-On Lab, you have learnt how to use Page Inspector to preview your Web application without having to rebuild and run the Web site in a browser. In addition, you have learnt how to quickly find and fix bugs by accessing directly from the rendered output to the source code.
-
-
-
-
-
-
-
-
-
-
-
-
-

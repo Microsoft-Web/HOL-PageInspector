@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <DependencyCheckerConfiguration>
-  <title>Using Page Inspector in Visual Studio 11 Hands-on Lab</title>
+  <title>Using Page Inspector in Visual Studio 2012 Hands-on Lab</title>
   <previews>
     <preview name="Check lab dependencies" description="Check required components"></preview>
   </previews>

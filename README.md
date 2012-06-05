@@ -1,10 +1,10 @@
-# Using Page Inspector in Visual Studio 11 #
+# Using Page Inspector in Visual Studio 2012 #
 
 ## Hands-on Lab ##
 
 ### Introduction ###
 
-This Hands-On Lab is a step-by-step guide that is designed to help you learn more about the new Page Inspector feature built into Visual Studio 11. It provides instructions to guide you through the process of developing a complete application.
+This Hands-On Lab is a step-by-step guide that is designed to help you learn more about the new Page Inspector feature built into Visual Studio 2012. It provides instructions to guide you through the process of developing a complete application.
 
 ### Repository Structure ###
 
