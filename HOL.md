@@ -39,12 +39,10 @@ In this hands-on lab, you will learn how to:
 
 - Page Inspector (included in the Microsoft Visual Studio 2012 installation)
 
-- Internet Explorer 9
+- Internet Explorer 9 or higher
 
 - ASP.NET MVC 4 (only if you are performing exercise 1; included in the Microsoft Visual Studio 2012 installation)
 
-> **Note:** Page Inspector hosts the current version of Internet Explorer in Visual Studio. For full functionality, you must have Internet Explorer 9 installed on your computer. You do not need to have Internet Explorer Platform Preview (also called Internet Explorer 10 Test Drive) installed. 
- 
 ---
 <a name="Exercises" />
 ## Exercises ##
