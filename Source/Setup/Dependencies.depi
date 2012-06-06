@@ -3,11 +3,6 @@
   <title>Using Page Inspector in Visual Studio 2012 Hands-on Lab</title>
 
   <dependencies>
-    <dependency
-        hint="PowerShell2"
-        name="Windows PowerShell 2.0"
-        type="WebPI" />
-
 	<dependency
 		 hint="Microsoft Visual Studio (?:Ultimate 2012 RC|Premium 2012 RC|Professional 2012 RC|Express 2012 for Windows 8).*;11.0"
 		 name="Microsoft Visual Studio 2012"

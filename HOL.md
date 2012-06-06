@@ -43,6 +43,17 @@ In this hands-on lab, you will learn how to:
 
 - ASP.NET MVC 4 (only if you are performing exercise 1; included in the Microsoft Visual Studio 2012 installation)
 
+<a name="Setup"/>
+### Setup ###
+
+In order to execute the exercises in this hands-on lab you need to set up your environment.
+
+1. Open a Windows Explorer window and browse to the lab’s **source** folder.
+
+1. Execute the **Setup.cmd** file with Administrator privileges to launch the setup process that will configure your environment for this lab.
+
+1. If the User Account Control dialog is shown, confirm the action to proceed.
+
 ---
 <a name="Exercises" />
 ## Exercises ##
