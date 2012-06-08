@@ -13,8 +13,11 @@
   <Title>Using Page Inspector in Visual Studio 2012</Title>
   <Version>1.2.0</Version>
   <Source>.\Source</Source>
-  <DependencyChecker ScriptsFolder="env:PackagePath\Assets\DependencyChecker\scripts">.\Source\Setup\Dependencies.dep</DependencyChecker>
+  <DependencyChecker>.\Source\Setup\Dependencies.depi</DependencyChecker>
   <Technologies>
     <Technology>Visual Studio</Technology>	
   </Technologies>
+	<CustomProperties>    
+		<Property Name="GitHubRepository" Value="https://github.com/Microsoft-Web/HOL-PageInspector" />
+	</CustomProperties>
 </Lab>
