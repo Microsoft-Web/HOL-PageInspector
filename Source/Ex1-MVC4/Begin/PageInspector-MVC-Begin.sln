@@ -1,7 +1,14 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 11
-Project("{00000000-0000-0000-0000-000000000000}") = "PhotoGallery", "PhotoGallery\PhotoGallery.csproj", "{BFDCEC77-D542-4954-A4A4-62562F446795}"
+# Visual Studio Express 2012 for Web
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhotoGallery", "PhotoGallery\PhotoGallery.csproj", "{77186046-344B-4BB6-8D66-445C3964B6AC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{BC3C27A3-28BC-4E47-BEF3-599FBCBCCDA7}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.Config = .nuget\NuGet.Config
+		.nuget\NuGet.exe = .nuget\NuGet.exe
+		.nuget\NuGet.targets = .nuget\NuGet.targets
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -9,10 +16,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{BFDCEC77-D542-4954-A4A4-62562F446795}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{BFDCEC77-D542-4954-A4A4-62562F446795}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{BFDCEC77-D542-4954-A4A4-62562F446795}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{BFDCEC77-D542-4954-A4A4-62562F446795}.Release|Any CPU.Build.0 = Release|Any CPU
+		{77186046-344B-4BB6-8D66-445C3964B6AC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{77186046-344B-4BB6-8D66-445C3964B6AC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{77186046-344B-4BB6-8D66-445C3964B6AC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{77186046-344B-4BB6-8D66-445C3964B6AC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

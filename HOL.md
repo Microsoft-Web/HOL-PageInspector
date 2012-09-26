@@ -35,24 +35,13 @@ In this hands-on lab, you will learn how to:
 <a name="SystemRequirements" /> 
 ### Prerequisites ###
 
-- [Microsoft Visual Studio 2012](http://go.microsoft.com/fwlink/?LinkId=240160)
+- [Microsoft Visual Studio Express 2012 for Web](http://www.microsoft.com/visualstudio/eng/products/visual-studio-express-for-web) or superior (read [Appendix A](#AppendixA) for instructions on how to install it).
 
 - Page Inspector (included in the Microsoft Visual Studio 2012 installation)
 
 - Internet Explorer 9 or higher
 
 - ASP.NET MVC 4 (only if you are performing exercise 1; included in the Microsoft Visual Studio 2012 installation)
-
-<a name="Setup"/>
-### Setup ###
-
-In order to execute the exercises in this hands-on lab you need to set up your environment.
-
-1. Open a Windows Explorer window and browse to the lab’s **source** folder.
-
-1. Execute the **Setup.cmd** file with Administrator privileges to launch the setup process that will configure your environment for this lab.
-
-1. If the User Account Control dialog is shown, confirm the action to proceed.
 
 ---
 <a name="Exercises" />
@@ -79,18 +68,19 @@ In this task, you will learn how to use the Page Inspector in the context of an 
 
   1. Open **Visual Studio 2012** and open the **PageInspector-MVC-Begin.sln** solution located in **Source\Ex1-MVC4\Begin** from this lab's folder. You will use this solution for exploring Page Inspector. 
 
+  1. Click **PhotoGallery** and select **Manage NuGet Packages**.
+
+  1. In the **Manage NuGet Packages** page, click **Restore** in order to download missing packages.
+
+  1. Build the solution by clicking **Build** | **Build Solution**.
+
   1. In the Solution Explorer, locate **Index.cshtml** view under the **/Views/Home** project folder, right-click it and select **View in Page Inspector**.
 
  	![Selecting a file to preview in Page Inspector](./images/Selecting-a-file-to-preview-in-Page-Inspector.png?raw=true "Selecting a file to preview in Page Inspector")
  
 	_Selecting a file to preview in Page Inspector_
 
-  1. To generate the metadata that is required for some of its features, Page Inspector must instrument the project by adding the following setting to the <appSetting> element in the **Web.config** file. You can use Page Inspector even if this setting is disabled or it is missing. However, some features like the source selection mapping will not work under these conditions.
-
-	````HTML
-	<add key="VisualStudioDesignTime:Enabled" value="true" />
-````
-  1. The Page Inspector window will show the /Home/Index URL mapped to the source View you selected. 
+  1. The Page Inspector window will show the _/Home/Index_ URL mapped to the source View you selected. 
 
         
 	![ThefirstcontactwithPageInspector](images/ThefirstcontactwithPageInspector.png?raw=true)
@@ -131,8 +121,7 @@ In this task, you will learn how to use the Page Inspector in the context of an 
  
 	_Inspecting elements_
 
-  1. Click the **Toggle Inspection Mode** button (![Select the HTML tab to display the HTML code rendered in the Page Inspector browser.](./images/Select-the-HTML-tab-to-display-the-HTML-code-rendered-in-the-Page-Inspector-browser..png?raw=true "Select the HTML tab to display the HTML code rendered in the Page Inspector browser.")
-) to disable the cursor.
+  1. Click the **Toggle Inspection Mode** button (![Select the HTML tab to display the HTML code rendered in the Page Inspector browser.](./images/Select-the-HTML-tab-to-display-the-HTML-code-rendered-in-the-Page-Inspector-browser..png?raw=true "Select the HTML tab to display the HTML code rendered in the Page Inspector browser.")) to disable the cursor.
 
   1. Select the **HTML** tab to display the HTML code rendered in the Page Inspector browser.
 
@@ -152,7 +141,7 @@ In this task, you will learn how to use the Page Inspector in the context of an 
  
 	_Discovering styles and source files of a selected element_
 
-  1. With the toggle inspection pointer enabled, move the mouse pointer below the menu bar and click the blank half circle.
+  1. With the toggle inspection pointer enabled, move the mouse pointer below the blue featured bar and click the half circle.
 
  	![Selecting an element](./images/Selecting-an-element.png?raw=true "Selecting an element")
  
@@ -209,13 +198,13 @@ As there is no real WYSIWYG in ASP.NET MVC, most of the style issues are detecte
 
 In this task, you will use the Page inspector and fix some issues the Photo Gallery application.
 
-1. Using Page Inspector, locate the **Register** and the **Log on** links at the left side of the header.
+1. Using Page Inspector, locate the **Register** and the **Log in** links at the left side of the header.
 
 	Notice that the links are not displayed at the expected place on the right, and they are shown like a bulleted list. You will now align the links to the right and restyle them accordingly.
 
- 	![Locating the Register and Log on links](./images/Locating-the-Register-and-Log-on-links.png?raw=true "Locating the Register and Log on links")
+ 	![Locating the Register and Log in links](./images/Locating-the-Register-and-Log-on-links.png?raw=true "Locating the Register and Log in links")
  
-	_Locating the Register and Log on links_
+	_Locating the Register and Log in links_
 
 1. With Toggle Inspection Mode selected, click close to, but not on, the Register link to open its code.
 
@@ -246,7 +235,7 @@ In this task, you will use the Page inspector and fix some issues the Photo Gall
  
 	_Reloading the page_
 
-1. Using the inspection mode, select any of the **\<li>** items that contain the “Register” and “Log On” links. Then, click the **\<section> #login** item to access **Styles.css** code.
+1. Using the inspection mode, select any of the **\<li>** items that contain the “Register” and “Log in” links. Then, click the **\<section> #login** item to access **Styles.css** code.
 
  	![Finding the style](./images/Finding-the-style.png?raw=true "Finding the style")
  
@@ -292,6 +281,12 @@ In this exercise, you will learn how to preview and debug a WebForms solution us
 In this task, you will learn how to use the Page Inspector features in the context of a WebForms project that shows a photo gallery.
 
 1. Open **Visual Studio 2012** and open the **PageInspector-WebForms-Begin.sln** solution located in **Source\Ex2-WebForms\Begin** from this lab's folder.
+
+1. Click **PhotoGallery** and select **Manage NuGet Packages**.
+
+1. In the **Manage NuGet Packages** page, click **Restore** in order to download missing packages.
+
+1. Build the solution by clicking **Build** | **Build Solution**.
 
 1. In the Solution Explorer, locate **Default.aspx** page, right-click it and select **View in Page Inspector**.
 
@@ -430,7 +425,7 @@ In this task, you will use the Page inspector for fixing some issues the Photo G
 
 	Notice that the link is not displayed at the expected place on the right. You will now align the link to the right and restyle it accordingly.
 
- 	![Log on link positioned on the left](./images/Log-on-link-positioned-on-the-left.png?raw=true "Log on link positioned on the left")
+ 	![Log in link positioned on the left](./images/Log-on-link-positioned-on-the-left.png?raw=true "Log in link positioned on the left")
  
 	_Log In link positioned on the left_
 
