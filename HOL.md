@@ -294,14 +294,6 @@ In this task, you will learn how to use the Page Inspector features in the conte
  
 	_Opening Default.aspx with Page Inspector_
 
-1. To generate the metadata that is required for some of its features, Page Inspector must instrument the project by adding the following setting to the <appSetting> element in Web.config file. You can use Page Inspector even with this setting disabled or missing. However, some features will not work, such as source selection mapping.
-
-	````HTML
-	<add key="VisualStudioDesignTime:Enabled" value="true" />
-````
-
-	
-
 1. The Page Inspector window will show Default.aspx. 
 
  	![Viewing Default.aspx in Page Inspector](./images/Viewing-Default.aspx-in-Page-Inspector.png?raw=true "Viewing Default.aspx in Page Inspector")
@@ -342,8 +334,7 @@ In this task, you will learn how to use the Page Inspector features in the conte
  
 	_Inspecting elements_
 
-1. Click the **Toggle Inspection Mode** button (![Select-the-HTML-tab-to-display-the-HTML-code-rendered-in-the-Page-Inspector-browser.](./images/Select-the-HTML-tab-to-display-the-HTML-code-rendered-in-the-Page-Inspector-browser..png?raw=true "Select-the-HTML-tab-to-display-the-HTML-code-rendered-in-the-Page-Inspector-browser.")
- ), located in Page Inspector tabs, to disable the cursor.
+1. Click the **Toggle Inspection Mode** button (![Select-the-HTML-tab-to-display-the-HTML-code-rendered-in-the-Page-Inspector-browser.](./images/Select-the-HTML-tab-to-display-the-HTML-code-rendered-in-the-Page-Inspector-browser..png?raw=true "Select-the-HTML-tab-to-display-the-HTML-code-rendered-in-the-Page-Inspector-browser.")), located in Page Inspector tabs, to disable the cursor.
 
 1.  Select the **HTML** tab to display the HTML code rendered in the Page Inspector browser.
 
@@ -379,7 +370,7 @@ In this task, you will learn how to use the Page Inspector features in the conte
 
 1. Now, click the '**your** **logo here'** text on the header using the inspection mode.
 
-1. In the **Styles** tab, locate the **font-size** CSS attribute under the **.site-title** group. Click the attribute once to edit its value. Replace the 2.3em value with **5em**, and then press ENTER. Notice that the title looks bigger.
+1. In the **Styles** tab, locate the **font-size** CSS attribute under the **.site-title** group. Click the attribute once to edit its value. Replace the 2.3em value with **3em**, and then press ENTER. Notice that the title looks bigger.
 
  	![Changing CSS values in the Page Inspector2](./images/Changing-CSS-values-in-the-Page-Inspector2.png?raw=true "Changing CSS values in the Page Inspector")
  
@@ -393,7 +384,7 @@ In this task, you will learn how to use the Page Inspector features in the conte
 
 1. Another feature of Page Inspector is the Layout pane. Using the inspection mode, select the navigation bar and then click the **Layout** tab on the right pane. You will see the exact size of the selected element, as well as its offset, margin, padding and border size. Notice that you can also modify the values from this view.
 
- 	![Element layout in Page Inspector](./images/Element-layout-in-Page-Inspector2.png?raw=true "Element layout in Page Inspector")
+ 	![Element layout in Page Inspector](./images/Element-layout-in-Page-Inspector.png?raw=true "Element layout in Page Inspector")
  
  	_Element layout in Page Inspector_
  
@@ -421,11 +412,11 @@ As there is no real WYSIWYG in ASP.NET WebForms, some style issues are detected 
 
 In this task, you will use the Page inspector for fixing some issues the Photo Gallery application. In the following steps, you will detect and quickly fix some simple styling issue in the header.
 
-1. Using Page Inspection, locate the **Log In** link at the left side of the header.
+1. Using Page Inspection, locate the **Register** and the **Log In** links at the left side of the header.
 
 	Notice that the link is not displayed at the expected place on the right. You will now align the link to the right and restyle it accordingly.
 
- 	![Log in link positioned on the left](./images/Log-on-link-positioned-on-the-left.png?raw=true "Log in link positioned on the left")
+ 	![Log in link positioned on the left](./images/Locating-the-Register-and-Log-on-links.png?raw=true "Log in link positioned on the left")
  
 	_Log In link positioned on the left_
 
@@ -433,11 +424,15 @@ In this task, you will use the Page inspector for fixing some issues the Photo G
 
 	Notice that the link source code is located in the **Site.Master** file, not in the Default.aspx page which is the place you might look in first place; you have been placed directly in the correct source file.
 
-1. The page is using the LoginView control in the same way it is used by default in the Web Application project template. To make it look nicer, remove the brackets between the Log In and Log Out controls.
+1. In the **Styles** tab, locate and click the **\<section> #login** item, which is the HTML container for these links.
 
- 	![Brackets Removed](./images/Brackets-Removed.png?raw=true "Brackets Removed")
+	Notice that the **#login** style is automatically located in **Site.css** after you click. Moreover, the code is now highlighted.
+
+ 	![Selecting the CSS styles](./images/Selecting-the-CSS-styles.png?raw=true "Selecting the CSS styles")
  
-	_Brackets Removed_
+	_Selecting the CSS styles_
+
+1. Uncomment the **text-align** attribute in the highlighted code by removing the opening and closing characters and save the **Site.css** file.
 
 	Page Inspector is aware of all the different files that compose the current page, and it can detect when any of these files change. It alerts you whenever the current page in browser is not in sync with the source files.
 
@@ -447,29 +442,23 @@ In this task, you will use the Page inspector for fixing some issues the Photo G
  
 	_Reloading the page_
 
-	The Log In link looks nicer without the brackets, now, you will move it to the right side. To do this, you will locate the styles being applied to the Login section and update it to align its content to the right.
+	The links are now at the right, but they still look like a bulleted list. Now, you will remove the bullets and align the links horizontally.
 
-	![Reloading the page](./images/Reloading-the-page.png?raw=true "Reloading the page")
+	![Reloading the page](images/reloading-the-page3.png?raw=true)
  
 	_Reloading the page_
 
-1. In the **Styles** tab, locate and click the **<section> #login** item, which is the HTML container for the link.
+1. In **Style.css**, uncomment the code for **#login li** items. The style you are adding will hide the bullet and display the items horizontally.
 
-	Notice that **Site.css** opened and the corresponding style is selected.
-
- 	![Selecting the CSS styles](./images/Selecting-the-CSS-styles.png?raw=true "Selecting the CSS styles")
+ 	![Restyling the login links](./images/Restyling-the-login-links.png?raw=true "Restyling the login links")
  
-	_Selecting the CSS styles_
+	_Restyling the login links_
 
-1. Uncomment the **text-align** attribute in the highlighted code by removing the opening and closing characters and save the **Site.css** file.
+1. Save **Style.css** file and click once on the bar located below the address to reload the page. Notice that the links appear correctly.
 
-	Notice that the page inspector will prompt again for showing and refreshing.
-
-1. In the Page Inspector browser, click once on the bar located below the address bar to reload the page.
-
- 	![Moving the Log In link to the right](./images/Moving-the-Log-In-link-to-the-right.png?raw=true "Moving the Log In link to the right")
+ 	![Links aligned to the right side](./images/Links-aligned-to-the-right-side.png?raw=true "Links aligned to the right side")
  
-	_Moving the Log In link to the right_
+	_Links aligned to the right side_
 
 1. Finally, you will change the header title. Instead of searching for the '**your logo here'** text in all the files, use the inspection mode to click the text and get to source code that generates it.
 
@@ -479,7 +468,7 @@ In this task, you will use the Page inspector for fixing some issues the Photo G
 
 1. Now you are in **Site.Master**, replace the '**your logo here**' text with '**Photo Gallery**'. Save and update the Page Inspector browser.
 
- 	![Photo Gallery page updated](./images/Photo-Gallery-page-updated.png?raw=true "Photo Gallery page updated")
+ 	![Photo Gallery page updated](./images/PhotoGallerypage.png?raw=true "Photo Gallery page updated")
  
 	_Photo Gallery page updated_
 
