@@ -51,7 +51,7 @@ This hands-on lab includes the following exercises:
 
 1. [Exercise 1: Using Page Inspector in ASP.NET MVC Projects](#Exercise1)
 
-1. [Exercise 2: Using Page Inspector in WebForms Projects](#Exercise1)
+1. [Exercise 2: Using Page Inspector in WebForms Projects](#Exercise2)
 
 > **Note:** Each exercise is accompanied by a starting solution, located in the Begin folder of the exercise, that allows you to follow each exercise independently of the others. Inside the source code for an exercise, you will also find an End folder containing a Visual Studio solution with the code that results from completing the steps in the corresponding exercise. You can use these solutions as guidance if you need additional help as you work through this hands-on lab.
 
@@ -372,7 +372,7 @@ In this task, you will learn how to use the Page Inspector features in the conte
 
 1. In the **Styles** tab, locate the **font-size** CSS attribute under the **.site-title** group. Click the attribute once to edit its value. Replace the 2.3em value with **3em**, and then press ENTER. Notice that the title looks bigger.
 
- 	![Changing CSS values in the Page Inspector2](./images/Changing-CSS-values-in-the-Page-Inspector2.png?raw=true "Changing CSS values in the Page Inspector")
+ 	![Changing CSS values in the Page Inspector2](./images/Changing-CSS-values-in-the-Page-Inspector.png?raw=true "Changing CSS values in the Page Inspector")
  
 	_Changing CSS values in the Page Inspector_
 
@@ -447,6 +447,12 @@ In this task, you will use the Page inspector for fixing some issues the Photo G
 	![Reloading the page](images/reloading-the-page3.png?raw=true)
  
 	_Reloading the page_
+
+1. Using the inspection mode, select any of the **\<li>** items that contain the “Register” and “Log in” links. Then, click the **\<section> #login** item to access **Styles.css** code.
+
+ 	![Finding the style](./images/Finding-the-style.png?raw=true "Finding the style")
+ 
+	_Finding the style_
 
 1. In **Style.css**, uncomment the code for **#login li** items. The style you are adding will hide the bullet and display the items horizontally.
 
