@@ -68,9 +68,9 @@ In this task, you will learn how to use the Page Inspector in the context of an 
 
   1. Open **Visual Studio 2012** and open the **PageInspector-MVC-Begin.sln** solution located in **Source\Ex1-MVC4\Begin** from this lab's folder. You will use this solution for exploring Page Inspector. 
 
-  1. Click **PhotoGallery** and select **Manage NuGet Packages**.
+  1. Right-click **PhotoGallery** and select **Manage NuGet Packages**.
 
-  1. In the **Manage NuGet Packages** page, click **Restore** in order to download missing packages.
+  1. In the **Manage NuGet Packages** dialog, click **Restore** in order to download missing packages.
 
   1. Build the solution by clicking **Build** | **Build Solution**.
 
@@ -208,7 +208,7 @@ In this task, you will use the Page inspector and fix some issues the Photo Gall
 
 1. With Toggle Inspection Mode selected, click close to, but not on, the Register link to open its code.
 
-	Notice that the source code of the links is located in the **_LogOnPartial.cshtml** file, not the Index.cshtml nor the _Layout.cshtml, which are the places you might look in first place. You have been placed directly in the correct source file.
+	Notice that the source code of the links is located in the **_LoginPartial.cshtml** file, not the Index.cshtml nor the _Layout.cshtml, which are the places you might look in first place. You have been placed directly in the correct source file.
 
 1. In the **Styles** tab, locate and click the **<section> #login** item, which is the HTML container for these links.
 
@@ -231,9 +231,9 @@ In this task, you will use the Page inspector and fix some issues the Photo Gall
 
 	The links are now at the right, but they still look like a bulleted list. Now, you will remove the bullets and align the links horizontally.
 
-	![Reloading the page](images/reloading-the-page3.png?raw=true)
+	![Updated page](images/reloading-the-page3.png?raw=true)
  
-	_Reloading the page_
+	_Updated page_
 
 1. Using the inspection mode, select any of the **\<li>** items that contain the “Register” and “Log in” links. Then, click the **\<section> #login** item to access **Styles.css** code.
 
@@ -265,7 +265,7 @@ In this task, you will use the Page inspector and fix some issues the Photo Gall
  
 	_Photo Gallery page updated_
 
-1. Finally press **F5** to run the app. Check out all the changes work as expected.
+1. Finally, selet the **PhotoGallery** project and press **F5** to run the app. Check out all the changes work as expected.
 
  
 ---
@@ -282,9 +282,9 @@ In this task, you will learn how to use the Page Inspector features in the conte
 
 1. Open **Visual Studio 2012** and open the **PageInspector-WebForms-Begin.sln** solution located in **Source\Ex2-WebForms\Begin** from this lab's folder.
 
-1. Click **PhotoGallery** and select **Manage NuGet Packages**.
+1. In the Solution Explorer, right-click the **PhotoGallery** project and select **Manage NuGet Packages**.
 
-1. In the **Manage NuGet Packages** page, click **Restore** in order to download missing packages.
+1. In the **Manage NuGet Packages** dialog, click **Restore** in order to download missing packages.
 
 1. Build the solution by clicking **Build** | **Build Solution**.
 
@@ -370,7 +370,7 @@ In this task, you will learn how to use the Page Inspector features in the conte
 
 1. Now, click the '**your** **logo here'** text on the header using the inspection mode.
 
-1. In the **Styles** tab, locate the **font-size** CSS attribute under the **.site-title** group. Click the attribute once to edit its value. Replace the 2.3em value with **3em**, and then press ENTER. Notice that the title looks bigger.
+1. In the **Styles** tab, locate the **font-size** CSS attribute under the **.site-title** group. Double-click the attribute once to edit its value. Replace the 2.3em value with **3em**, and then press ENTER. Notice that the title looks bigger.
 
  	![Changing CSS values in the Page Inspector2](./images/Changing-CSS-values-in-the-Page-Inspector.png?raw=true "Changing CSS values in the Page Inspector")
  
@@ -410,7 +410,7 @@ To find the files involved, you'd have used the "Search" or "Search in files" fe
  
 As there is no real WYSIWYG in ASP.NET WebForms, some style issues are detected on a later stage, after running or deploying. Now, with Page Inspector, it is possible to preview any page without running the solution.
 
-In this task, you will use the Page inspector for fixing some issues the Photo Gallery application. In the following steps, you will detect and quickly fix some simple styling issue in the header.
+In this task, you will use the Page inspector for fixing some issues of the Photo Gallery application. In the following steps, you will detect and quickly fix some simple styling issue in the header.
 
 1. Using Page Inspection, locate the **Register** and the **Log In** links at the left side of the header.
 
@@ -444,9 +444,9 @@ In this task, you will use the Page inspector for fixing some issues the Photo G
 
 	The links are now at the right, but they still look like a bulleted list. Now, you will remove the bullets and align the links horizontally.
 
-	![Reloading the page](images/reloading-the-page3.png?raw=true)
+	![Updated page](images/reloading-the-page3.png?raw=true)
  
-	_Reloading the page_
+	_Updated page_
 
 1. Using the inspection mode, select any of the **\<li>** items that contain the “Register” and “Log in” links. Then, click the **\<section> #login** item to access **Styles.css** code.
 
