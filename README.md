@@ -4,7 +4,9 @@
 
 ### Introduction ###
 
-This Hands-On Lab is a step-by-step guide that is designed to help you learn more about the new Page Inspector feature built into Visual Studio 2012. It provides instructions to guide you through the process of developing a complete application.
+These Hands-On Labs are sets of step-by-step guides that are designed to help you learn Visual Studio 2012, ASP.NET 4.5 WebForms and ASP.NET MVC 4. Each Lab provides instructions to guide you through the process of developing a Web application.
+
+In this Hands-on Lab you will discover a new tool to find and fix web page issues in Visual Studio. Page Inspector is a new tool that brings browser diagnostics tools to Visual Studio and provides an integrated experience among the browser, ASP.NET, and source code. It renders a web page (HTML, Web Forms, ASP.NET MVC, or Web Pages) directly within the Visual Studio IDE and lets you examine both the source code and the resulting output. Page Inspector enables you to easily decompose a website, rapidly build pages from the ground up, and quickly diagnose issues.
 
 ### Repository Structure ###
 

@@ -1,6 +1,6 @@
-﻿<a name="HOLTitle" />
-#Using Page Inspector in Visual Studio 2012#
+﻿<a name="HOLTop" />
 
+# Using Page Inspector in Visual Studio 2012 #
 ---
 
 <a name="Overview" />
@@ -32,16 +32,14 @@ In this hands-on lab, you will learn how to:
 - Detect and fix issues in your web pages using Page Inspector
 
 
-<a name="SystemRequirements" /> 
+<a name="Prerequisites" />
 ### Prerequisites ###
+
+You must have the following items to complete this lab:
 
 - [Microsoft Visual Studio Express 2012 for Web](http://www.microsoft.com/visualstudio/eng/products/visual-studio-express-for-web) or superior (read [Appendix A](#AppendixA) for instructions on how to install it).
 
-- Page Inspector (included in the Microsoft Visual Studio 2012 installation)
-
 - Internet Explorer 9 or higher
-
-- ASP.NET MVC 4 (only if you are performing exercise 1; included in the Microsoft Visual Studio 2012 installation)
 
 ---
 <a name="Exercises" />
@@ -55,6 +53,7 @@ This hands-on lab includes the following exercises:
 
 > **Note:** Each exercise is accompanied by a starting solution, located in the Begin folder of the exercise, that allows you to follow each exercise independently of the others. Inside the source code for an exercise, you will also find an End folder containing a Visual Studio solution with the code that results from completing the steps in the corresponding exercise. You can use these solutions as guidance if you need additional help as you work through this hands-on lab.
 
+Estimated time to complete this lab: **30 minutes**.
  
 <a name="Exercise1" />
 ### Exercise 1: Using Page Inspector in ASP.NET MVC Projects ###
@@ -66,21 +65,23 @@ In this exercise, you will learn how to preview and debug an **ASP.NET MVC 4** s
 
 In this task, you will learn how to use the Page Inspector in the context of an ASP.NET MVC 4 project that shows a photo gallery.
 
-  1. Open **Visual Studio 2012** and open the **PageInspector-MVC-Begin.sln** solution located in **Source\Ex1-MVC4\Begin** from this lab's folder. You will use this solution for exploring Page Inspector. 
+1. Open the **Begin** solution located at **Source/Ex1-MVC4/Begin/** folder.
 
-  1. Right-click **PhotoGallery** and select **Manage NuGet Packages**.
+	1. You will need to download some missing NuGet packages before continue. To do this, click the **Project** menu and select **Manage NuGet Packages**.
 
-  1. In the **Manage NuGet Packages** dialog, click **Restore** in order to download missing packages.
+	1. In the **Manage NuGet Packages** dialog, click **Restore** in order to download missing packages.
 
-  1. Build the solution by clicking **Build** | **Build Solution**.
+	1. Finally, build the solution by clicking **Build** | **Build Solution**.
 
-  1. In the Solution Explorer, locate **Index.cshtml** view under the **/Views/Home** project folder, right-click it and select **View in Page Inspector**.
+	>**Note:** One of the advantages of using NuGet is that you don't have to ship all the libraries in your project, reducing the project size. With NuGet Power Tools, by specifying the package versions in the Packages.config file, you will be able to download all the required libraries the first time you run the project. This is why you will have to run these steps after you open an existing solution from this lab.
+
+1. In the Solution Explorer, locate **Index.cshtml** view under the **/Views/Home** project folder, right-click it and select **View in Page Inspector**.
 
  	![Selecting a file to preview in Page Inspector](./images/Selecting-a-file-to-preview-in-Page-Inspector.png?raw=true "Selecting a file to preview in Page Inspector")
  
 	_Selecting a file to preview in Page Inspector_
 
-  1. The Page Inspector window will show the _/Home/Index_ URL mapped to the source View you selected. 
+1. The Page Inspector window will show the _/Home/Index_ URL mapped to the source View you selected. 
 
         
 	![ThefirstcontactwithPageInspector](images/ThefirstcontactwithPageInspector.png?raw=true)
@@ -91,7 +92,7 @@ In this task, you will learn how to use the Page Inspector in the context of an 
 
 	>**Note:** When the width of Page Inspector browser is less than the width of the opened page, you will not see the page properly. If that happens, adjust the width of the Page Inspector.
 
-  1. Click the **Files** tab in Page Inspector.
+1. Click the **Files** tab in Page Inspector.
 
 	You will see all the source files that are composing the Index page. This feature helps to identify all the elements at a glance, especially when you are working with partial views and templates. Notice that you can also open each of the files if you click the links.
 
@@ -99,7 +100,7 @@ In this task, you will learn how to use the Page Inspector in the context of an 
  
 	_The Files tab_
 
-  1. Click the **Toggle Inspection Mode** button, located at the left of the tabs.
+1. Click the **Toggle Inspection Mode** button, located at the left of the tabs.
 
 	This tool will let you select any element of the page and see its HTML and Razor code.
 
@@ -107,7 +108,7 @@ In this task, you will learn how to use the Page Inspector in the context of an 
  
 	_Toggle Inspection Mode button_
 
-  1. In the Page Inspector browser, move the mouse pointer over the page elements. While you move the mouse pointer over any part of the rendered page, the element type is displayed and the corresponding source markup or code is highlighted in the Visual Studio editor. 
+1. In the Page Inspector browser, move the mouse pointer over the page elements. While you move the mouse pointer over any part of the rendered page, the element type is displayed and the corresponding source markup or code is highlighted in the Visual Studio editor. 
 
  	![Inspectionmodeinaction](images/Inspectionmodeinaction.png?raw=true)
  
@@ -121,11 +122,11 @@ In this task, you will learn how to use the Page Inspector in the context of an 
  
 	_Inspecting elements_
 
-  1. Click the **Toggle Inspection Mode** button (![Select the HTML tab to display the HTML code rendered in the Page Inspector browser.](./images/Select-the-HTML-tab-to-display-the-HTML-code-rendered-in-the-Page-Inspector-browser..png?raw=true "Select the HTML tab to display the HTML code rendered in the Page Inspector browser.")) to disable the cursor.
+1. Click the **Toggle Inspection Mode** button (![Select the HTML tab to display the HTML code rendered in the Page Inspector browser.](./images/Select-the-HTML-tab-to-display-the-HTML-code-rendered-in-the-Page-Inspector-browser..png?raw=true "Select the HTML tab to display the HTML code rendered in the Page Inspector browser.")) to disable the cursor.
 
-  1. Select the **HTML** tab to display the HTML code rendered in the Page Inspector browser.
+1. Select the **HTML** tab to display the HTML code rendered in the Page Inspector browser.
 
-  1. In the HTML markup, locate the list item with the Koala link and select it.
+1. In the HTML markup, locate the list item with the Koala link and select it.
 
 	Notice that when you select the code, the corresponding output is automatically highlighted in the browser. This feature is useful to see how an HTML block is rendered on the page.
 
@@ -133,7 +134,7 @@ In this task, you will learn how to use the Page Inspector in the context of an 
  
 	_Selecting HTML element in the page_
 
-  1. Click the **Toggle Inspection Mode** button to enable _Inspection Mode_ and click the navigation bar. On the right of the HTML code, in the Styles pane, you will see a list with the CSS styles applied to the selected element.
+1. Click the **Toggle Inspection Mode** button to enable _Inspection Mode_ and click the navigation bar. On the right of the HTML code, in the Styles pane, you will see a list with the CSS styles applied to the selected element.
 
 	> **Note:** Since the header is a part of the site layout, Page Inspector will also open _Layout.cshtml file and highlight the segment of code affected.
 
@@ -141,13 +142,13 @@ In this task, you will learn how to use the Page Inspector in the context of an 
  
 	_Discovering styles and source files of a selected element_
 
-  1. With the toggle inspection pointer enabled, move the mouse pointer below the blue featured bar and click the half circle.
+1. With the toggle inspection pointer enabled, move the mouse pointer below the blue featured bar and click the half circle.
 
  	![Selecting an element](./images/Selecting-an-element.png?raw=true "Selecting an element")
  
 	_Selecting an element_
 
-  1. In the Styles pane, locate the **background-image** item under the **.main-content** group. **Uncheck** the **background-image** and see what happens. You will notice that the browser will reflect the changes immediately and the circle is hidden.
+1. In the Styles pane, locate the **background-image** item under the **.main-content** group. **Uncheck** the **background-image** and see what happens. You will notice that the browser will reflect the changes immediately and the circle is hidden.
 
 	>**Note:** The changes you apply on the Page Inspector Styles tab do not affect the original stylesheet. You can uncheck styles or change their values as many times as you want, but they will be restored after refreshing the page.
 
@@ -155,21 +156,21 @@ In this task, you will learn how to use the Page Inspector in the context of an 
  
 	_Enabling and disabling CSS styles_
 
-  1. Now, click the '**your logo here**' text on the header using the inspection mode.
+1. Now, click the '**your logo here**' text on the header using the inspection mode.
 
-  1. In the **Styles** tab, locate the **font-size** CSS attribute under the **.site-title** group. Double-click the attribute value and replace the 2.3 em value with **3 em**, and then press **ENTER**. Notice that the title looks bigger.
+1. In the **Styles** tab, locate the **font-size** CSS attribute under the **.site-title** group. Double-click the attribute value and replace the 2.3 em value with **3 em**, and then press **ENTER**. Notice that the title looks bigger.
 
  	![Changing CSS values in the Page Inspector](./images/Changing-CSS-values-in-the-Page-Inspector.png?raw=true "Changing CSS values in the Page Inspector")
  
 	_Changing CSS values in the Page Inspector_
 
-  1. Click the **Trace Styles** tab, located in the right pane of Page Inspector. This is an alternative way to see all the styles applied to the selection, ordered by attribute name.
+1. Click the **Trace Styles** tab, located in the right pane of Page Inspector. This is an alternative way to see all the styles applied to the selection, ordered by attribute name.
 
 	![CSSstylestracing](images/CSSstylestracing.png?raw=true)
  
 	_CSS styles tracing of the selected element_
 
-  1. Another feature of Page Inspector is the Layout pane. Using the inspection mode, select the navigation bar and then click the **Layout** tab on the right pane. You will see the exact size of the selected element, as well as its offset, margin, padding and border size. Notice that you can also modify the values from this view.
+1. Another feature of Page Inspector is the Layout pane. Using the inspection mode, select the navigation bar and then click the **Layout** tab on the right pane. You will see the exact size of the selected element, as well as its offset, margin, padding and border size. Notice that you can also modify the values from this view.
 
  	![Element layout in Page Inspector](./images/Element-layout-in-Page-Inspector.png?raw=true "Element layout in Page Inspector")
  
@@ -194,7 +195,7 @@ To find the files involved, you would have used the "Search" or "Search in files
 1. Return to Visual Studio to apply a fix. Repeat all the steps to test.
 
  
-As there is no real WYSIWYG in ASP.NET MVC, most of the style issues are detected on a later stage, after running or deploying the web application. Now, with Page Inspector, it is possible to preview any page without running the solution.
+As there is no real WYSIWYG in ASP.NET MVC 4, most of the style issues are detected on a later stage, after running or deploying the web application. Now, with Page Inspector, it is possible to preview any page without running the solution.
 
 In this task, you will use the Page inspector and fix some issues the Photo Gallery application.
 
@@ -280,13 +281,15 @@ In this exercise, you will learn how to preview and debug a WebForms solution us
 
 In this task, you will learn how to use the Page Inspector features in the context of a WebForms project that shows a photo gallery.
 
-1. Open **Visual Studio 2012** and open the **PageInspector-WebForms-Begin.sln** solution located in **Source\Ex2-WebForms\Begin** from this lab's folder.
+1. Open the **Begin** solution located at **Source/Ex2-WebForms/Begin/** folder.
 
-1. In the Solution Explorer, right-click the **PhotoGallery** project and select **Manage NuGet Packages**.
+	1. You will need to download some missing NuGet packages before continue. To do this, click the **Project** menu and select **Manage NuGet Packages**.
 
-1. In the **Manage NuGet Packages** dialog, click **Restore** in order to download missing packages.
+	1. In the **Manage NuGet Packages** dialog, click **Restore** in order to download missing packages.
 
-1. Build the solution by clicking **Build** | **Build Solution**.
+	1. Finally, build the solution by clicking **Build** | **Build Solution**.
+
+	>**Note:** One of the advantages of using NuGet is that you don't have to ship all the libraries in your project, reducing the project size. With NuGet Power Tools, by specifying the package versions in the Packages.config file, you will be able to download all the required libraries the first time you run the project. This is why you will have to run these steps after you open an existing solution from this lab.
 
 1. In the Solution Explorer, locate **Default.aspx** page, right-click it and select **View in Page Inspector**.
 
@@ -479,6 +482,8 @@ In this task, you will use the Page inspector for fixing some issues of the Phot
 	_Photo Gallery page updated_
 
 1. Finally press **F5** to run the app the check out all the changes work as expected.
+
+>**Note:** Additionally, you can deploy this application to Windows Azure Web Sites following [Appendix B: Publishing an ASP.NET MVC 4 Application using Web Deploy](#AppendixB).
 
 ---
 
