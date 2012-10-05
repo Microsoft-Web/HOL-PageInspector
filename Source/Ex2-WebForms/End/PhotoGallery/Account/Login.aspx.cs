@@ -11,13 +11,13 @@ namespace PhotoGallery.Account
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            RegisterHyperLink.NavigateUrl = "Register.aspx";
-            OpenAuthLogin.ReturnUrl = Request.QueryString["ReturnUrl"];
+            this.RegisterHyperLink.NavigateUrl = "Register.aspx";
+            this.OpenAuthLogin.ReturnUrl = Request.QueryString["ReturnUrl"];
 
             var returnUrl = HttpUtility.UrlEncode(Request.QueryString["ReturnUrl"]);
-            if (!String.IsNullOrEmpty(returnUrl))
+            if (!string.IsNullOrEmpty(returnUrl))
             {
-                RegisterHyperLink.NavigateUrl += "?ReturnUrl=" + returnUrl;
+                this.RegisterHyperLink.NavigateUrl += "?ReturnUrl=" + returnUrl;
             }
         }
     }

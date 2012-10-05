@@ -18,60 +18,12 @@ namespace PhotoGallery.Account
         {
             get;
             private set;
-        }
-
-        protected void Page_Load()
-        {
-            if (!IsPostBack)
-            {
-                // Determine the sections to render
-                var hasLocalPassword = OpenAuth.HasLocalPassword(User.Identity.Name);
-                setPassword.Visible = !hasLocalPassword;
-                changePassword.Visible = hasLocalPassword;
-
-                CanRemoveExternalLogins = hasLocalPassword;
-
-                // Render success message
-                var message = Request.QueryString["m"];
-                if (message != null)
-                {
-                    // Strip the query string from action
-                    Form.Action = ResolveUrl("~/Account/Manage.aspx");
-
-                    SuccessMessage =
-                        message == "ChangePwdSuccess" ? "Your password has been changed."
-                        : message == "SetPwdSuccess" ? "Your password has been set."
-                        : message == "RemoveLoginSuccess" ? "The external login was removed."
-                        : String.Empty;
-                    successMessage.Visible = !String.IsNullOrEmpty(SuccessMessage);
-                }
-            }
-
-        }
-
-        protected void setPassword_Click(object sender, EventArgs e)
-        {
-            if (IsValid)
-            {
-                var result = OpenAuth.AddLocalPassword(User.Identity.Name, password.Text);
-                if (result.IsSuccessful)
-                {
-                    Response.Redirect("~/Account/Manage.aspx?m=SetPwdSuccess");
-                }
-                else
-                {
-
-                    ModelState.AddModelError("NewPassword", result.ErrorMessage);
-
-                }
-            }
-        }
-
+        }        
 
         public IEnumerable<OpenAuthAccountData> GetExternalLogins()
         {
             var accounts = OpenAuth.GetAccountsForUser(User.Identity.Name);
-            CanRemoveExternalLogins = CanRemoveExternalLogins || accounts.Count() > 1;
+            this.CanRemoveExternalLogins = this.CanRemoveExternalLogins || accounts.Count() > 1;
             return accounts;
         }
 
@@ -79,10 +31,9 @@ namespace PhotoGallery.Account
         {
             var m = OpenAuth.DeleteAccount(User.Identity.Name, providerName, providerUserId)
                 ? "?m=RemoveLoginSuccess"
-                : String.Empty;
+                : string.Empty;
             Response.Redirect("~/Account/Manage.aspx" + m);
         }
-
 
         protected static string ConvertToDisplayDateTime(DateTime? utcDateTime)
         {
@@ -90,6 +41,50 @@ namespace PhotoGallery.Account
             // offset and format. Here we're converting it to the server timezone and formatting
             // as a short date and a long time string, using the current thread culture.
             return utcDateTime.HasValue ? utcDateTime.Value.ToLocalTime().ToString("G") : "[never]";
+        }
+
+        protected void Page_Load()
+        {
+            if (!this.IsPostBack)
+            {
+                // Determine the sections to render
+                var hasLocalPassword = OpenAuth.HasLocalPassword(User.Identity.Name);
+                this.setPassword.Visible = !hasLocalPassword;
+                this.changePassword.Visible = hasLocalPassword;
+
+                this.CanRemoveExternalLogins = hasLocalPassword;
+
+                // Render success message
+                var message = Request.QueryString["m"];
+                if (message != null)
+                {
+                    // Strip the query string from action
+                    Form.Action = this.ResolveUrl("~/Account/Manage.aspx");
+
+                    this.SuccessMessage =
+                        message == "ChangePwdSuccess" ? "Your password has been changed."
+                        : message == "SetPwdSuccess" ? "Your password has been set."
+                        : message == "RemoveLoginSuccess" ? "The external login was removed."
+                        : string.Empty;
+                    this.successMessage.Visible = !string.IsNullOrEmpty(this.SuccessMessage);
+                }
+            }
+        }
+
+        protected void SetPassword_Click(object sender, EventArgs e)
+        {
+            if (this.IsValid)
+            {
+                var result = OpenAuth.AddLocalPassword(User.Identity.Name, this.password.Text);
+                if (result.IsSuccessful)
+                {
+                    Response.Redirect("~/Account/Manage.aspx?m=SetPwdSuccess");
+                }
+                else
+                {
+                    ModelState.AddModelError("NewPassword", result.ErrorMessage);
+                }
+            }
         }
     }
 }

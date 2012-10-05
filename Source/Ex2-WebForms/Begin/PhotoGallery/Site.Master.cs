@@ -12,7 +12,7 @@ namespace PhotoGallery
     {
         private const string AntiXsrfTokenKey = "__AntiXsrfToken";
         private const string AntiXsrfUserNameKey = "__AntiXsrfUserName";
-        private string _antiXsrfTokenValue;
+        private string antiXsrfTokenValue;
 
         protected void Page_Init(object sender, EventArgs e)
         {
@@ -22,43 +22,44 @@ namespace PhotoGallery
             if (requestCookie != null && Guid.TryParse(requestCookie.Value, out requestCookieGuidValue))
             {
                 // Use the Anti-XSRF token from the cookie
-                _antiXsrfTokenValue = requestCookie.Value;
-                Page.ViewStateUserKey = _antiXsrfTokenValue;
+                this.antiXsrfTokenValue = requestCookie.Value;
+                Page.ViewStateUserKey = this.antiXsrfTokenValue;
             }
             else
             {
                 // Generate a new Anti-XSRF token and save to the cookie
-                _antiXsrfTokenValue = Guid.NewGuid().ToString("N");
-                Page.ViewStateUserKey = _antiXsrfTokenValue;
+                this.antiXsrfTokenValue = Guid.NewGuid().ToString("N");
+                Page.ViewStateUserKey = this.antiXsrfTokenValue;
 
                 var responseCookie = new HttpCookie(AntiXsrfTokenKey)
                 {
                     HttpOnly = true,
-                    Value = _antiXsrfTokenValue
+                    Value = this.antiXsrfTokenValue
                 };
                 if (FormsAuthentication.RequireSSL && Request.IsSecureConnection)
                 {
                     responseCookie.Secure = true;
                 }
+
                 Response.Cookies.Set(responseCookie);
             }
 
-            Page.PreLoad += master_Page_PreLoad;
+            Page.PreLoad += this.Master_Page_PreLoad;
         }
 
-        protected void master_Page_PreLoad(object sender, EventArgs e)
+        protected void Master_Page_PreLoad(object sender, EventArgs e)
         {
-            if (!IsPostBack)
+            if (!this.IsPostBack)
             {
                 // Set Anti-XSRF token
-                ViewState[AntiXsrfTokenKey] = Page.ViewStateUserKey;
-                ViewState[AntiXsrfUserNameKey] = Context.User.Identity.Name ?? String.Empty;
+                this.ViewState[AntiXsrfTokenKey] = Page.ViewStateUserKey;
+                this.ViewState[AntiXsrfUserNameKey] = Context.User.Identity.Name ?? string.Empty;
             }
             else
             {
                 // Validate the Anti-XSRF token
-                if ((string)ViewState[AntiXsrfTokenKey] != _antiXsrfTokenValue
-                    || (string)ViewState[AntiXsrfUserNameKey] != (Context.User.Identity.Name ?? String.Empty))
+                if ((string)ViewState[AntiXsrfTokenKey] != this.antiXsrfTokenValue
+                    || (string)ViewState[AntiXsrfUserNameKey] != (Context.User.Identity.Name ?? string.Empty))
                 {
                     throw new InvalidOperationException("Validation of Anti-XSRF token failed.");
                 }
@@ -67,7 +68,6 @@ namespace PhotoGallery
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
         }
     }
 }

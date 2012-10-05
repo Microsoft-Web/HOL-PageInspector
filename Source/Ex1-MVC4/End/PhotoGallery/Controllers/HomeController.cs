@@ -47,21 +47,21 @@
                 }
             };
 
-            return View(photoList);
+            return this.View(photoList);
         }
 
         public ActionResult About()
         {
             ViewBag.Message = "Your app description page.";
 
-            return View();
+            return this.View();
         }
 
         public ActionResult Contact()
         {
             ViewBag.Message = "Your contact page.";
 
-            return View();
+            return this.View();
         }
     }
 }

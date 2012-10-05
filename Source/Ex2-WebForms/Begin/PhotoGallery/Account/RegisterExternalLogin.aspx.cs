@@ -10,52 +10,52 @@ namespace PhotoGallery.Account
     {
         protected string ProviderName
         {
-            get { return (string)ViewState["ProviderName"] ?? String.Empty; }
-            private set { ViewState["ProviderName"] = value; }
+            get { return (string)ViewState["ProviderName"] ?? string.Empty; }
+            private set { this.ViewState["ProviderName"] = value; }
         }
 
         protected string ProviderDisplayName
         {
-            get { return (string)ViewState["ProviderDisplayName"] ?? String.Empty; }
-            private set { ViewState["ProviderDisplayName"] = value; }
+            get { return (string)this.ViewState["ProviderDisplayName"] ?? string.Empty; }
+            private set { this.ViewState["ProviderDisplayName"] = value; }
         }
 
         protected string ProviderUserId
         {
-            get { return (string)ViewState["ProviderUserId"] ?? String.Empty; }
-            private set { ViewState["ProviderUserId"] = value; }
+            get { return (string)this.ViewState["ProviderUserId"] ?? string.Empty; }
+            private set { this.ViewState["ProviderUserId"] = value; }
         }
 
         protected string ProviderUserName
         {
-            get { return (string)ViewState["ProviderUserName"] ?? String.Empty; }
-            private set { ViewState["ProviderUserName"] = value; }
+            get { return (string)this.ViewState["ProviderUserName"] ?? string.Empty; }
+            private set { this.ViewState["ProviderUserName"] = value; }
         }
 
         protected void Page_Load()
         {
-            if (!IsPostBack)
+            if (!this.IsPostBack)
             {
-                ProcessProviderResult();
+                this.ProcessProviderResult();
             }
         }
 
-        protected void logIn_Click(object sender, EventArgs e)
+        protected void LogIn_Click(object sender, EventArgs e)
         {
-            CreateAndLoginUser();
+            this.CreateAndLoginUser();
         }
 
-        protected void cancel_Click(object sender, EventArgs e)
+        protected void Cancel_Click(object sender, EventArgs e)
         {
-            RedirectToReturnUrl();
+            this.RedirectToReturnUrl();
         }
 
         private void ProcessProviderResult()
         {
             // Process the result from an auth provider in the request
-            ProviderName = OpenAuth.GetProviderNameFromCurrentRequest();
+            this.ProviderName = OpenAuth.GetProviderNameFromCurrentRequest();
 
-            if (String.IsNullOrEmpty(ProviderName))
+            if (string.IsNullOrEmpty(this.ProviderName))
             {
                 Response.Redirect(FormsAuthentication.LoginUrl);
             }
@@ -63,23 +63,23 @@ namespace PhotoGallery.Account
             // Build the redirect url for OpenAuth verification
             var redirectUrl = "~/Account/RegisterExternalLogin.aspx";
             var returnUrl = Request.QueryString["ReturnUrl"];
-            if (!String.IsNullOrEmpty(returnUrl))
+            if (!string.IsNullOrEmpty(returnUrl))
             {
                 redirectUrl += "?ReturnUrl=" + HttpUtility.UrlEncode(returnUrl);
             }
 
             // Verify the OpenAuth payload
             var authResult = OpenAuth.VerifyAuthentication(redirectUrl);
-            ProviderDisplayName = OpenAuth.GetProviderDisplayName(ProviderName);
+            this.ProviderDisplayName = OpenAuth.GetProviderDisplayName(this.ProviderName);
             if (!authResult.IsSuccessful)
             {
-                Title = "External login failed";
-                userNameForm.Visible = false;
+                this.Title = "External login failed";
+                this.userNameForm.Visible = false;
 
-                ModelState.AddModelError("Provider", String.Format("External login {0} failed.", ProviderDisplayName));
+                ModelState.AddModelError("Provider", string.Format("External login {0} failed.", this.ProviderDisplayName));
 
                 // To view this error, enable page tracing in web.config (<system.web><trace enabled="true"/></system.web>) and visit ~/Trace.axd
-                Trace.Warn("OpenAuth", String.Format("There was an error verifying authentication with {0})", ProviderDisplayName), authResult.Error);
+                Trace.Warn("OpenAuth", string.Format("There was an error verifying authentication with {0})", this.ProviderDisplayName), authResult.Error);
                 return;
             }
 
@@ -87,50 +87,48 @@ namespace PhotoGallery.Account
             // Check if user is already registered locally
             if (OpenAuth.Login(authResult.Provider, authResult.ProviderUserId, createPersistentCookie: false))
             {
-                RedirectToReturnUrl();
+                this.RedirectToReturnUrl();
             }
 
             // Store the provider details in ViewState
-            ProviderName = authResult.Provider;
-            ProviderUserId = authResult.ProviderUserId;
-            ProviderUserName = authResult.UserName;
+            this.ProviderName = authResult.Provider;
+            this.ProviderUserId = authResult.ProviderUserId;
+            this.ProviderUserName = authResult.UserName;
 
             // Strip the query string from action
-            Form.Action = ResolveUrl(redirectUrl);
+            Form.Action = this.ResolveUrl(redirectUrl);
 
             if (User.Identity.IsAuthenticated)
             {
                 // User is already authenticated, add the external login and redirect to return url
-                OpenAuth.AddAccountToExistingUser(ProviderName, ProviderUserId, ProviderUserName, User.Identity.Name);
-                RedirectToReturnUrl();
+                OpenAuth.AddAccountToExistingUser(this.ProviderName, this.ProviderUserId, this.ProviderUserName, User.Identity.Name);
+                this.RedirectToReturnUrl();
             }
             else
             {
                 // User is new, ask for their desired membership name
-                userName.Text = authResult.UserName;
+                this.userName.Text = authResult.UserName;
             }
         }
 
         private void CreateAndLoginUser()
         {
-            if (!IsValid)
+            if (!this.IsValid)
             {
                 return;
             }
 
-            var createResult = OpenAuth.CreateUser(ProviderName, ProviderUserId, ProviderUserName, userName.Text);
+            var createResult = OpenAuth.CreateUser(this.ProviderName, this.ProviderUserId, this.ProviderUserName, this.userName.Text);
             if (!createResult.IsSuccessful)
             {
-
                 ModelState.AddModelError("UserName", createResult.ErrorMessage);
-
             }
             else
             {
                 // User created & associated OK
-                if (OpenAuth.Login(ProviderName, ProviderUserId, createPersistentCookie: false))
+                if (OpenAuth.Login(this.ProviderName, this.ProviderUserId, createPersistentCookie: false))
                 {
-                    RedirectToReturnUrl();
+                    this.RedirectToReturnUrl();
                 }
             }
         }
@@ -138,7 +136,7 @@ namespace PhotoGallery.Account
         private void RedirectToReturnUrl()
         {
             var returnUrl = Request.QueryString["ReturnUrl"];
-            if (!String.IsNullOrEmpty(returnUrl) && OpenAuth.IsLocalUrl(returnUrl))
+            if (!string.IsNullOrEmpty(returnUrl) && OpenAuth.IsLocalUrl(returnUrl))
             {
                 Response.Redirect(returnUrl);
             }
